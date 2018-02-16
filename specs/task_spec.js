@@ -6,7 +6,7 @@ describe('Task', function () {
   let task;
 
   beforeEach(function () {
-    task = new Task('save the world', 10, 10);
+    task = new Task('save the world', 10, 10, '$1000');
   })
 
   it('should have a description', function () {
@@ -19,6 +19,10 @@ describe('Task', function () {
 
   it('should have an urgency level', function () {
     assert.strictEqual(task.urgency, 10);
+  })
+
+  it('should have a reward', function () {
+    assert.strictEqual(task.reward, '$1000');
   })
 
 })
