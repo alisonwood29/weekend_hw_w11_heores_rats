@@ -26,4 +26,8 @@ describe('Hero', function () {
     const expected = 'Hello, my name is Alison'
     assert.strictEqual(hero.talk(), expected);
   })
+
+  it('should have an empty list of tasks to begin', function () {
+    assert.deepStrictEqual(hero.tasks, []);
+  })
 })
