@@ -6,11 +6,13 @@ const Food = require('../food');
 describe('Hero', function () {
 
   let hero;
-  let food;
+  let food1;
+  let food2;
 
   beforeEach(function () {
     hero = new Hero('Alison', 'chocolate');
-    food = new Food('chocolate', 20);
+    food1 = new Food('banana', 25);
+    food2 = new Food('chocolate', 20);
   });
 
   it('should have a name', function () {
@@ -34,9 +36,14 @@ describe('Hero', function () {
     assert.deepStrictEqual(hero.tasks, []);
   });
 
-  it('should be able to eat food', function () {
-    hero.eat(food);
-    assert.strictEqual(hero.healthValue, 120);
+  it('should be able to eat food and replenish health value', function () {
+    hero.eat(food1);
+    assert.strictEqual(hero.healthValue, 125);
   });
+
+  it('should be able replenish health vale by 1.5 for favourite food', function () {
+    hero.eat(food2);
+    assert.strictEqual(hero.healthValue, 130);
+  })
 
 });
