@@ -6,7 +6,7 @@ describe('Task', function () {
   let task;
 
   beforeEach(function () {
-    task = new Task('save the world', 10, 10, '$1000');
+    task = new Task('save the world', 10, 10, '$1000', false);
   })
 
   it('should have a description', function () {
@@ -23,6 +23,10 @@ describe('Task', function () {
 
   it('should have a reward', function () {
     assert.strictEqual(task.reward, '$1000');
+  })
+
+  it('can mark task as complete', function () {
+    assert.strictEqual(task.complete, false);
   })
 
 })
