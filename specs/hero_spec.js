@@ -11,7 +11,7 @@ describe('Hero', function () {
   })
 
   it('should have a name', function () {
-    assert.strictEqual(hero.name, 'Alison')
+    assert.strictEqual(hero.name, 'Alison');
   })
 
   it('should have a health value', function () {
@@ -19,6 +19,11 @@ describe('Hero', function () {
   })
 
   it('should have a favourite food', function () {
-    assert.strictEqual(hero.favouriteFood, 'chocolate')
+    assert.strictEqual(hero.favouriteFood, 'chocolate');
+  })
+
+  it('can talk', function () {
+    const expected = 'Hello, my name is Alison'
+    assert.strictEqual(hero.talk(), expected);
   })
 })
