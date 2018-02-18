@@ -44,6 +44,12 @@ Hero.prototype.completeTasks = function () {
   });
 }
 
+Hero.prototype.incompleteTasks = function () {
+  return this.tasks.filter(function (task) {
+    return task.complete === false;
+  });
+}
+
 
 
 

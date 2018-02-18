@@ -83,4 +83,12 @@ describe('Hero', function () {
     assert.deepStrictEqual(hero.completeTasks(), expected);
   });
 
+  it('should be able to find incomplete tasks', function () {
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    expected = [task1, task3];
+    assert.deepStrictEqual(hero.incompleteTasks(), expected);
+  });
+
 });
