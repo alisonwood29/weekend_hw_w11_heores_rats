@@ -59,21 +59,21 @@ describe('Hero', function () {
     assert.deepStrictEqual(hero.tasks, expected);
   });
 
-  // it('should be able to sort tasks by difficulty', function () {
-  //   hero.addTask(task1);
-  //   hero.addTask(task2);
-  //   hero.addTask(task3);
-  //   expected = [task1, task3, task2];
-  //   assert.deepStrictEqual(hero.sortTaskByDifficulty, expected);
-  // });
-  //
-  // it('should be able to find most difficult task', function () {
-  //   hero.addTask(task1);
-  //   hero.addTask(task2);
-  //   hero.addTask(task3);
-  //   expected = [task1];
-  //   assert.deepEqual(hero.mostDifficultTask, expected);
-  // });
+  it('should be able to sort tasks by difficulty', function () {
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    expected = [task1, task3, task2];
+    assert.deepStrictEqual(hero.sortTaskByDifficulty(), expected);
+  });
+
+  it('should be able to find most difficult task', function () {
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    expected = [task1];
+    assert.deepEqual(hero.mostDifficultTask(), expected);
+  });
 
   it('should be able to find complete tasks', function () {
     hero.addTask(task1);

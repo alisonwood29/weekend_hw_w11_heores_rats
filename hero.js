@@ -21,22 +21,22 @@ Hero.prototype.addTask = function (task) {
   this.tasks.push(task);
 }
 
-// Hero.prototype.sortTaskByDifficulty = function () {
-//   sortedTasks = this.tasks.sort(function (min, max){
-//     return min.difficulty - max.difficulty
-//   });
-//   return sortedTasks;
-// }
-//
-// Hero.prototype.mostDifficultTask = function () {
-//   const highestDifficulty = this.tasks.reduce(function(acc, task) {
-//     return Math.max(acc, task.difficulty);
-//   }, 0);
-//   const mostDifficultTask = this.tasks.filter(function(task) {
-//     return task.difficulty === highestDifficulty;
-//   });
-//   return mostDifficultTask[0];
-// }
+Hero.prototype.sortTaskByDifficulty = function () {
+  sortedTasks = this.tasks.sort(function (min, max){
+    return max.difficulty - min.difficulty
+  });
+  return sortedTasks;
+}
+
+Hero.prototype.mostDifficultTask = function () {
+  const highestDifficulty = this.tasks.reduce(function(acc, task) {
+    return Math.max(acc, task.difficulty);
+  }, 0);
+  const mostDifficultTask = this.tasks.filter(function(task) {
+    return task.difficulty === highestDifficulty;
+  });
+  return mostDifficultTask;
+}
 
 Hero.prototype.completeTasks = function () {
   return this.tasks.filter(function (task) {
