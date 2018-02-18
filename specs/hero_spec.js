@@ -1,6 +1,7 @@
 const assert = require('assert');
 const Hero = require('../hero');
 const Food = require('../food');
+const Task = require('../task');
 
 
 describe('Hero', function () {
@@ -8,11 +9,17 @@ describe('Hero', function () {
   let hero;
   let food1;
   let food2;
+  let task1;
+  let task2;
+  let task3;
 
   beforeEach(function () {
     hero = new Hero('Alison', 'chocolate');
     food1 = new Food('banana', 25);
     food2 = new Food('chocolate', 20);
+    task1 = new Task('save the world', 10, 10, '$1000', false);
+    task2 = new Task('do the dishes', 2, 1, '$1', true);
+    task3 = new Task('get cat out of tree', 6, 9, '$20', false);
   });
 
   it('should have a name', function () {
@@ -44,6 +51,12 @@ describe('Hero', function () {
   it('should be able replenish health vale by 1.5 for favourite food', function () {
     hero.eat(food2);
     assert.strictEqual(hero.healthValue, 130);
-  })
+  });
+
+  it('should be able to add a task', function () {
+    hero.addTask(task1);
+    expected = [task1];
+    assert.deepStrictEqual(hero.tasks, expected);
+  });
 
 });
